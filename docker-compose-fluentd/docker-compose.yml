@@ -1,0 +1,13 @@
+version: '2'
+services:
+
+  fluentd:
+    container_name: prd-fluentd
+    build: ./fluentd
+    volumes:
+      - ./fluentd/conf:/fluentd/etc
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+
+
