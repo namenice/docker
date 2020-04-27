@@ -12,7 +12,7 @@ PROJECT := Dataplance Exporter
 ## Install dataplan exporter
 deploy-dataplan:
 	docker build -t dataplane-openstack-exporter .
-	docker run -d --name dataplan-exporter  --env-file sample-openrc -p 9000:9999 dataplane-openstack-exporter
+	docker run -d --name dataplan-exporter --restart=always --env-file sample-openrc -p 9000:9999 dataplane-openstack-exporter
 
 ## Destroy dataplan exporter
 destroy-dataplan:
