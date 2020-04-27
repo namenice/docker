@@ -1,0 +1,7 @@
+FROM python:2
+WORKDIR /usr/src/app/ 
+COPY dataplane-openstack-exporter.py .
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+EXPOSE 9999
+CMD [ "python", "dataplane-openstack-exporter.py" ]
